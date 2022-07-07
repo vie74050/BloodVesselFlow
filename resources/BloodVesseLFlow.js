@@ -14,7 +14,12 @@ function SetFlow(n=4) {
 
 /**Sets the css property --size, used for animation scale.
  * @param number n Size of vessel w.r.t original svg (n=1) */
-function SetSize(n=1) {
+function SetSize(n=0.8) {
     const root = document.documentElement;
     root.style.setProperty('--size', n);
+}
+
+function SetText(s='Normal Flow') {
+    const text_el = document.getElementById('vessel-text');
+    text_el.textContent = s;
 }

@@ -13,9 +13,9 @@
   </head>
   <body class="svganim vesselConstrict">
     <div class="ui-nav">
-        <button type="button" class="btn btn-primary" onclick="SetFlow(8); SetSize(1.1)">Dilated</button>
-        <button type="button" class="btn btn-primary" onclick="SetFlow(4); SetSize(0.8)">Normal</button>
-        <button type="button" class="btn btn-primary" onclick="SetFlow(2); SetSize(0.5)">Constricted</button>
+        <button type="button" class="btn btn-primary" onclick="SetFlow(10); SetSize(1.1); SetText('&#8595; Pressure ')">Dilated</button>
+        <button type="button" class="btn btn-primary" onclick="SetFlow(); SetSize(); SetText()">Normal</button>
+        <button type="button" class="btn btn-primary" onclick="SetFlow(2); SetSize(0.5); SetText('&#8593; Pressure')">Constricted</button>
     </div>
     
     <svg version="1.1" id="Normal" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
@@ -494,6 +494,7 @@
                     </g>
                 </g>
             </g>
+            
         </g>
         <g id="Vessel-side" style="clip-path:url(#SVGID_00000090259730770354011640000010861700803022485670_);">
                         
@@ -946,6 +947,16 @@
                     </g>
                 </g>
             </g>
+        </g>
+        <g>
+            <filter x="0" y="0" width="1" height="1" id="solid">
+                <feFlood flood-color="#ffffffcc" result="bg" />
+                <feMerge>
+                  <feMergeNode in="bg"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            <text filter="url(#solid)" id ="vessel-text" x="60%" y="51%" class="info">Normal Flow</text>
         </g>
     </g>
     </svg>

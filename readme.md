@@ -23,6 +23,7 @@ SVG required IDs & structure:
 - `#Circle-inner` The inner circle of the cross-section view that is scaled
   - `RBC_circle` The Red Blood Cell container cluster in cross-section view
     - `g.spin` Individual RBC image
+- `#vessel-text` Text container inside lateral vessel image
 
 Animations are all css-driven, controllable by modifying the css params:
 

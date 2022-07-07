@@ -69,17 +69,23 @@
     fill: #231F20;
 }
 
+/* typography */
+svg text.info {
+    font-size: 90%;
+    display: block;
+    fill: #330101;
+}
+
 /* custom properties for animation */
 :root {
     --size: 0.8;
-    --flow-rate: 5s;
+    --flow-rate: 4s;
 }
 
 #Rect-inner, 
 #Circle-inner {
     transform-box: fill-box; 
     transform-origin: center;
-    transition-property: transform;
     -webkit-transform: scale(var(--size));
     -moz-transform: scale(var(--size));
     transform: scale(var(--size));
