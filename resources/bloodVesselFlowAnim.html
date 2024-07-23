@@ -7,16 +7,15 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link href="https://cdn.jsdelivr.net/gh/vie74050/BloodVesselFlow/resources/BloodVesselFlow.css" rel="stylesheet"/>
-    <script src="https://cdn.jsdelivr.net/gh/vie74050/BloodVesselFlow/resources/BloodVesselFlow.js" type="text/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/gh/vie74050/BloodVesselFlow@73885e4f9a6ec297556bfae5a9dba93afeceb947/resources/BloodVesselFlow.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/gh/vie74050/BloodVesselFlow@73885e4f9a6ec297556bfae5a9dba93afeceb947/resources/BloodVesselFlow.min.js" type="text/javascript"></script>
 
   </head>
   <body class="svganim vesselConstrict">
     <div class="ui-nav">
-        <button type="button" class="btn btn-primary" onclick="SetFlow(3); SetSize(1.2); SetText('&#8595; Pressure ')">Dilated</button>
+        <button type="button" class="btn btn-primary" onclick="SetFlow(2.5); SetSize(1.2); SetText('&#8595; Pressure ')">Dilated</button>
         <button type="button" class="btn btn-primary" onclick="SetFlow(); SetSize(1); SetText()">Normal</button>
         <button type="button" class="btn btn-primary" onclick="SetFlow(10); SetSize(0.6); SetText('&#8593; Pressure')">Constricted</button>
-        <button type="button" class="btn btn-primary" onclick="SetFlow(); SetSize(0.6); SetText('&#8593; Pressure')">Constricted with Compensation</button>
     </div>
     
     <svg version="1.1" id="Normal" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
