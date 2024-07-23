@@ -70,16 +70,24 @@
 }
 
 /* typography */
-svg text.info {
-    font-size: 90%;
+text.info, div.info {
+    font-size: 18px;
+    color: #222;
+    padding: 0.5em 1em;
     display: block;
-    fill: #330101;
+    background-color: white;
+    position: absolute;
+    top: 50px;
+    left: 55%;
 }
 
 /* custom properties for animation */
 :root {
     --size: 0.8;
+    --invsize: calc(1 / var(--size));
     --flow-rate: 4s;
+    --opacity-rate: calc(var(--flow-rate) *1.01);
+    --spin-rate: calc(var(--flow-rate)* 0.8);
 }
 
 #Rect-inner, 
@@ -91,13 +99,6 @@ svg text.info {
     transform: scale(var(--size));
 }
 
-g.spin {
-    transform-box: fill-box; 
-    transform-origin: center;
-    animation: spin 10s infinite cubic-bezier(0.1, 0.7, 1.0, 0.1);
-    transform-origin: center center; /* moved here */
-}
-
 #RBC_circle {
     animation: animate-opacity var(--flow-rate) linear infinite;
 }
@@ -106,8 +107,26 @@ g.spin {
     animation: animate-x var(--flow-rate) linear infinite;
 }
 
+g.spin {
+    transform-box: fill-box; 
+    transform-origin: center;
+    transform-origin: center center; /* moved here */
+
+    -webkit-transform: scale(var(--invsize));
+    -moz-transform: scale(var(--invsize));
+    transform: scale(var(--invsize));
+   
+    animation: spin var(--spin-rate) linear infinite;
+
+}
+
 @keyframes spin {
-    100% {transform: rotate(360deg);}
+    from {
+        transform: scale(var(--invsize)) rotate(0deg);
+    }
+    to {
+        transform: scale(var(--invsize)) rotate(360deg);
+    }
 }
 
 @keyframes animate-opacity {
@@ -115,8 +134,8 @@ g.spin {
         opacity: 0;
     }
 
-    30% {
-        opacity: 0.2;
+    40% {
+        opacity: 0.5;
     }
 
     100% {
@@ -130,6 +149,6 @@ g.spin {
     }
 
     100% {
-        transform: translateX(100px);
+        transform: translateX(200px);
     }
 }

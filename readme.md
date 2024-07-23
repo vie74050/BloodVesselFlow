@@ -27,7 +27,11 @@ SVG required IDs & structure:
 
 Animations are all css-driven, controllable by modifying the css params:
 
-- `--size` Number by which to scale `#Rect-inner` or `#Circle-inner` to adjust sizw
+- `--size` Number by which to scale `#Rect-inner` or `#Circle-inner` to adjust size 
 - `--flow-rate` Number to set the animation duration property
 
 These properties can be changed by calling `SetSize(n)` or `SetFlow(n)`, respectively.  See BloodVesselFlow.js
+
+## deployed to CDN ##
+
+Deployed `resources`to Github. Access through cdn reference: `https://cdn.jsdelivr.net/gh/vie74050/BloodVesselFlow/resources`. See [jsdeliver](https://www.jsdelivr.com/).
