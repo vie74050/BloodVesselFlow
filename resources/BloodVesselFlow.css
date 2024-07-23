@@ -85,7 +85,7 @@ text.info, div.info {
 :root {
     --size: 0.8;
     --invsize: calc(1 / var(--size));
-    --flow-rate: 4s;
+    --flow-rate: 5s;
     --opacity-rate: calc(var(--flow-rate) *1.01);
     --spin-rate: calc(var(--flow-rate)* 0.8);
 }
@@ -100,7 +100,7 @@ text.info, div.info {
 }
 
 #RBC_circle {
-    animation: animate-opacity var(--flow-rate) linear infinite;
+    animation: animate-opacity var(--flow-rate) ease-in-out infinite;
 }
 
 #RBC_rect {
