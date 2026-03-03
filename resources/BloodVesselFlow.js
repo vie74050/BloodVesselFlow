@@ -1,4 +1,4 @@
-/* Author: Vienna Ly, BCIT LTC 2022
+/* Author: Vienna Ly, BCIT LTC 2022 updated 2024
  * © copyleft
  * Repo: GitHub https://github.com/vie74050/BloodVesselFlow 
  * Demo on learn.bcit.ca LOR: 

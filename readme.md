@@ -5,7 +5,7 @@ Art: Alistair Boakes
 SME: Teresa Gnoato, instructor NSHA BCIT
 
 © copyleft  
-GitHub https://github.com/vie74050/BloodVesselFlow 
+GitHub <https://github.com/vie74050/BloodVesselFlow>
 
 ## Description #
 
@@ -32,6 +32,13 @@ Animations are all css-driven, controllable by modifying the css params:
 
 These properties can be changed by calling `SetSize(n)` or `SetFlow(n)`, respectively.  See BloodVesselFlow.js
 
-## deployed to CDN ##
+## deployed ##
 
-Deployed `resources`to Github. Access through cdn reference: `https://cdn.jsdelivr.net/gh/vie74050/BloodVesselFlow/resources`. See [jsdeliver](https://www.jsdelivr.com/).
+### Code CDN ###
+
+Deployed `resources`to Github.  
+Access through cdn reference: `https://cdn.jsdelivr.net/gh/vie74050/BloodVesselFlow/resources`. See [jsdeliver](https://www.jsdelivr.com/).
+
+### D2L Course ###
+
+`https://learn.bcit.ca/d2l/le/content/49849/viewContent/9010270/View`
