@@ -23,3 +23,9 @@ function SetText(s='Normal Flow') {
     const text_el = document.getElementById('vessel-text');
     text_el.textContent = s;
 }
+
+function SetSelected(button) {
+    const buttons = document.querySelectorAll('.ui-nav button');
+    buttons.forEach(btn => btn.classList.remove('selected'));
+    button.classList.add('selected');
+}

@@ -34,10 +34,12 @@ These properties can be changed by calling `SetSize(n)` or `SetFlow(n)`, respect
 
 ## deployed ##
 
-### Code CDN ###
+### Code CDN jsdeliver ###
 
 Deployed `resources`to Github.  
-Access through cdn reference: `https://cdn.jsdelivr.net/gh/vie74050/BloodVesselFlow/resources`. See [jsdeliver](https://www.jsdelivr.com/).
+Access through cdn reference: `https://cdn.jsdelivr.net/gh/vie74050/BloodVesselFlow/resources`. See [jsdeliver](https://www.jsdelivr.com/documentation#id-github).
+
+Load any GitHub release, commit, or branch: `/gh/user/repo@version/file`.
 
 ### D2L Course ###
 

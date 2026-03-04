@@ -83,11 +83,12 @@ text.info, div.info {
 
 /* custom properties for animation */
 :root {
-    --size: 0.8;
+    --size: 1;
     --invsize: calc(1 / var(--size));
-    --flow-rate: 5s;
+    --flow-rate: 10s;
     --opacity-rate: calc(var(--flow-rate) *1.01);
     --spin-rate: calc(var(--flow-rate)* 1.2);
+    --vessel-x: 250px;
 }
 
 #Rect-inner, 
@@ -103,10 +104,20 @@ text.info, div.info {
     animation: animate-opacity var(--flow-rate) ease-in-out infinite;
 }
 
-#RBC_rect {
+.animate-x {
     animation: animate-x var(--flow-rate) linear infinite;
 }
-
+#RBC_rect,
+#RBC_rect2 {
+    transform: translateX(calc(-280px * var(--size)));
+}
+#RBC_rect2 {
+    animation-delay: calc(var(--flow-rate) / 2);
+}   
+#RBC_rect3 {
+    transform: translateX(calc(-280px * var(--size)));
+    animation-delay: calc(var(--flow-rate) );
+}
 g.spin {
     transform-box: fill-box; 
     transform-origin: center;
@@ -118,8 +129,8 @@ g.spin {
    
     animation: spin var(--spin-rate) linear infinite;
 
-    -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
-    filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+    -webkit-filter: drop-shadow( 2px 3px 2px rgba(0, 0, 0, .5));
+    filter: drop-shadow( 2px 3px 2px rgba(0, 0, 0, .5));
 
 }
 
@@ -148,10 +159,17 @@ g.spin {
 
 @keyframes animate-x {
     0% {
-        transform: translateX(-300px);
+        transform: translateX(calc(-1 * var(--vessel-x) * var(--size)));
     }
 
     100% {
-        transform: translateX(200px);
+        transform: translateX(calc(var(--vessel-x) * var(--size)));
     }
+}
+
+.ui-nav button.selected{
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+    -webkit-filter: drop-shadow( 0px 0px 3px #337ab7);
+    filter: drop-shadow( 0px 0px 3px #337ab7);
 }
