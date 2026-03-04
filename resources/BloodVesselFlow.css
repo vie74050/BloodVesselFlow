@@ -85,13 +85,12 @@ text.info, div.info {
 :root {
     --size: 1;
     --invsize: calc(1 / var(--size));
-    --flow-rate: 10s;
+    --flow-rate: 20s;
     --opacity-rate: calc(var(--flow-rate) *1.01);
     --spin-rate: calc(var(--flow-rate)* 1.2);
     --vessel-x: 250px;
 }
 
-#Rect-inner, 
 #Circle-inner {
     transform-box: fill-box; 
     transform-origin: center;
@@ -101,39 +100,47 @@ text.info, div.info {
 }
 
 #RBC_circle {
-    animation: animate-opacity var(--flow-rate) ease-in-out infinite;
+    animation: animate-opacity calc(var(--flow-rate) /5) ease-in-out infinite;
 }
 
+#Rect-inner {
+    transform-box: fill-box; 
+    transform-origin: left center;
+    -webkit-transform: scaleY(var(--size));
+    -moz-transform: scaleY(var(--size));
+    transform: scaleY(var(--size));
+}
 .animate-x {
     animation: animate-x var(--flow-rate) linear infinite;
+    transform-origin: left center;
+    /*transform: translateX(0%);*/
 }
-#RBC_rect,
-#RBC_rect2 {
-    transform: translateX(calc(-280px * var(--size)));
+.animate-x.delay-1 {
+    animation-delay: calc(var(--flow-rate) * 0.75 );
+}
+#RBC_rect {
+    transform: translateX(-60%);
 }
 #RBC_rect2 {
-    animation-delay: calc(var(--flow-rate) / 2);
+    transform: translateX(-120%);
 }   
 #RBC_rect3 {
-    transform: translateX(calc(-280px * var(--size)));
-    animation-delay: calc(var(--flow-rate) );
+    transform: translateX(-180%);
 }
+
 g.spin {
     transform-box: fill-box; 
     transform-origin: center;
-    transform-origin: center center; /* moved here */
-
-    -webkit-transform: scale(var(--invsize));
-    -moz-transform: scale(var(--invsize));
-    transform: scale(var(--invsize));
-   
-    animation: spin var(--spin-rate) linear infinite;
-
     -webkit-filter: drop-shadow( 2px 3px 2px rgba(0, 0, 0, .5));
     filter: drop-shadow( 2px 3px 2px rgba(0, 0, 0, .5));
+}
+#vessel-cut g.spin {
+    animation: spin var(--spin-rate) linear infinite;
 
 }
-
+#vessel-side g.spin {
+    animation: spin2 var(--spin-rate) linear infinite;
+}
 @keyframes spin {
     from {
         transform: scale(var(--invsize)) rotate(0deg);
@@ -142,7 +149,14 @@ g.spin {
         transform: scale(var(--invsize)) rotate(360deg);
     }
 }
-
+@keyframes spin2 {
+    from {
+        transform: scale(var(--invsize)) rotate(0deg);
+    }
+    to {
+        transform: scale(var(--invsize)) rotate(360deg);
+    }
+}
 @keyframes animate-opacity {
     0% {
         opacity: 0;
@@ -159,11 +173,11 @@ g.spin {
 
 @keyframes animate-x {
     0% {
-        transform: translateX(calc(-1 * var(--vessel-x) * var(--size)));
+        transform: scale(var(--size)) translateX(0%);
     }
 
     100% {
-        transform: translateX(calc(var(--vessel-x) * var(--size)));
+        transform: scale(var(--size)) translateX(240%);
     }
 }
 

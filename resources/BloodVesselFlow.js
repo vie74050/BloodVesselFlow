@@ -7,7 +7,7 @@
 
 /**Sets the css property --flow-rate, used for animation duration.
  * @param number n Time in seconds for animation */
-function SetFlow(n=4) {
+function SetFlow(n=20) {
     const root = document.documentElement;
     root.style.setProperty('--flow-rate', n + 's');
 }
